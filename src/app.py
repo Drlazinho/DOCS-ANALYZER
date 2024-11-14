@@ -9,7 +9,7 @@ def configure_interface():
     if uploaded_file is not None:
         fileName = uploaded_file.name
         # Enviar para o blob storage
-        blob_url = upload_blob(uploaded_file.get, fileName)
+        blob_url = upload_blob(uploaded_file.getvalue(), fileName)
         if blob_url:
             st.write(f"Arquivo {fileName} enviado com sucesso para o Azure Blob Storage")
             credit_cards_info = detect_credit_card_info(blob_url)
