@@ -19,6 +19,6 @@ def detect_credit_card_info(card_url):
         return {
             "card_name": fields.get('CardHolderName', {}).get('content'),
             "card_number": fields.get('CardNumber', {}).get('content'),
-            "expiry_date": fields.get('ExpiryDate', {}).get('content'),
-            "bank_name": fields.get('BankName', {}).get('content'),
+            "expiry_date": fields.get('ExpirationDate', {}).get('content'),#alterei o nome do atributo
+            "bank_name": fields.get('IssuingBank', {}).get('content'), #alterei o nome do atributo
         }
